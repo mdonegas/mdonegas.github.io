@@ -13,7 +13,6 @@ const accent = '#b6ff00'
 
 const navItems = [
   { label: 'Projects', href: '#projects' },
-  { label: 'Channel', href: '#channel' },
   { label: 'Contact', href: '#contact' },
 ]
 
@@ -32,13 +31,6 @@ const projects = [
     tags: ['C#', 'Unity', 'NavMesh', 'State Machine'],
     icon: Workflow,
   },
-]
-
-const topics = [
-  'Unity AI Systems',
-  'NPC Behavior Design',
-  'Navigation and State Machines',
-  'Gameplay Automation Tools',
 ]
 
 const container = {
@@ -66,7 +58,6 @@ function App() {
       <Navbar />
       <Hero />
       <Projects />
-      <Channel />
       <Footer />
     </main>
   )
@@ -85,7 +76,7 @@ function Navbar() {
           href="#top"
           className="font-mono text-xs font-black uppercase tracking-[0.32em] text-white transition-colors hover:text-[#b6ff00]"
         >
-          Donegosh.dev
+          mdonegas.dev
         </a>
 
         <div className="hidden items-center gap-8 md:flex">
@@ -108,7 +99,7 @@ function Hero() {
   return (
     <section
       id="top"
-      className="relative flex min-h-screen items-end border-b border-zinc-800 px-5 pb-16 pt-32 md:px-10 md:pb-24"
+      className="relative flex items-start border-b border-zinc-800 px-5 pb-16 pt-28 md:min-h-[82vh] md:px-10 md:pb-20 md:pt-32"
     >
       <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.035)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.035)_1px,transparent_1px)] bg-[size:56px_56px]" />
       <div className="absolute inset-x-0 top-0 h-1/2 bg-[radial-gradient(circle_at_70%_20%,rgba(182,255,0,0.16),transparent_34%)]" />
@@ -121,7 +112,7 @@ function Hero() {
       >
         <motion.div
           variants={fadeUp}
-          className="mb-8 flex flex-wrap items-center gap-3 font-mono text-xs uppercase tracking-[0.28em] text-zinc-400"
+          className="mb-6 flex flex-wrap items-center gap-3 font-mono text-xs uppercase tracking-[0.28em] text-zinc-400"
         >
           <span className="border border-zinc-700 bg-zinc-900 px-4 py-2 text-[#b6ff00]">
             Unity AI Development
@@ -159,7 +150,7 @@ function Hero() {
 
 function Projects() {
   return (
-    <section id="projects" className="px-5 py-28 md:px-10 md:py-40">
+    <section id="projects" className="px-5 py-20 md:px-10 md:py-28">
       <div className="mx-auto max-w-7xl">
         <SectionHeader
           eyebrow="Projects"
@@ -231,73 +222,6 @@ function ProjectCard({ project, index }) {
   )
 }
 
-function Channel() {
-  return (
-    <section
-      id="channel"
-      className="border-y border-zinc-800 bg-zinc-900 px-5 py-28 md:px-10 md:py-40"
-    >
-      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 lg:grid-cols-[1.15fr_0.85fr]">
-        <motion.div
-          initial={{ opacity: 0, x: -40 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, margin: '-120px' }}
-          transition={{ duration: 0.7, ease: 'easeOut' }}
-          className="border border-zinc-800 bg-zinc-950 p-4 md:p-6"
-        >
-          <div className="relative aspect-video border border-zinc-800 bg-zinc-900">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(182,255,0,0.18),transparent_30%),linear-gradient(to_bottom,rgba(255,255,255,0.06)_1px,transparent_1px)] bg-[size:100%_100%,100%_18px]" />
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="grid h-24 w-24 place-items-center border border-white bg-zinc-950 text-white transition-colors hover:border-[#b6ff00] hover:bg-[#b6ff00] hover:text-zinc-950">
-                <Play className="h-10 w-10 fill-current" />
-              </div>
-            </div>
-            <div className="absolute bottom-5 left-5 font-mono text-xs uppercase tracking-[0.24em] text-zinc-400">
-              Donegosh / Main Feature
-            </div>
-          </div>
-        </motion.div>
-
-        <motion.div
-          variants={container}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, margin: '-120px' }}
-          className="flex flex-col justify-between"
-        >
-          <div>
-            <motion.p
-              variants={fadeUp}
-              className="font-mono text-xs font-black uppercase tracking-[0.32em] text-[#b6ff00]"
-            >
-              Donegosh | Unity AI Content
-            </motion.p>
-            <motion.h2
-              variants={fadeUp}
-              className="mt-5 text-5xl font-black uppercase leading-[0.9] tracking-[-0.06em] text-white md:text-7xl"
-            >
-              Unity AI, Gameplay Logic, and Tooling.
-            </motion.h2>
-          </div>
-
-          <motion.ul variants={container} className="mt-12 space-y-3">
-            {topics.map((topic) => (
-              <motion.li
-                key={topic}
-                variants={fadeUp}
-                className="flex items-center justify-between border border-zinc-800 bg-zinc-950 px-5 py-5 font-mono text-xs uppercase tracking-[0.2em] text-zinc-300 transition-colors hover:border-[#b6ff00] hover:text-[#b6ff00]"
-              >
-                {topic}
-                <ArrowUpRight className="h-4 w-4" />
-              </motion.li>
-            ))}
-          </motion.ul>
-        </motion.div>
-      </div>
-    </section>
-  )
-}
-
 function Footer() {
   return (
     <footer id="contact" className="px-5 py-24 md:px-10 md:py-32">
@@ -317,13 +241,13 @@ function Footer() {
         </motion.div>
 
         <div className="mt-14 grid grid-cols-1 border border-zinc-800 md:grid-cols-3">
-          <FooterLink icon={Terminal} label="GitHub" href="https://github.com/" />
+          <FooterLink icon={Terminal} label="GitHub" href="https://github.com/mdonegas" />
           <FooterLink
             icon={Cpu}
             label="LinkedIn"
-            href="https://www.linkedin.com/"
+            href="https://www.linkedin.com/in/marcelo-donega-306b3934/"
           />
-          <FooterLink icon={Mail} label="E-mail" href="mailto:hello@donegosh.dev" />
+          <FooterLink icon={Mail} label="E-mail" href="mailto:mdonegas@gmail.com" />
         </div>
       </div>
     </footer>
