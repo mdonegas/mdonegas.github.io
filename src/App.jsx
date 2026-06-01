@@ -3,7 +3,6 @@ import {
   ArrowUpRight,
   Cpu,
   Mail,
-  Play,
   Radar,
   Terminal,
   Workflow,
@@ -184,19 +183,14 @@ function ProjectCard({ project, index }) {
       }}
       className="group border border-zinc-800 bg-zinc-900 p-4 md:p-6"
     >
-      <div className="relative aspect-video overflow-hidden border border-zinc-800 bg-zinc-950">
-        <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(182,255,0,0.12),transparent_38%),linear-gradient(to_right,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:100%_100%,28px_28px]" />
-        <div className="absolute inset-6 border border-zinc-800" />
-        <div className="absolute left-6 top-6 flex items-center gap-3 font-mono text-xs uppercase tracking-[0.2em] text-zinc-500">
+      <div className="flex items-center justify-between border border-zinc-800 bg-zinc-950 p-5">
+        <div className="flex items-center gap-3 font-mono text-xs uppercase tracking-[0.2em] text-zinc-500">
           <Icon className="h-5 w-5 text-[#b6ff00]" />
-          Video / GIF Slot
+          Unity AI System
         </div>
-        <div className="absolute bottom-6 left-6 right-6 flex items-center justify-between border-t border-zinc-800 pt-5">
-          <span className="font-mono text-xs uppercase tracking-[0.26em] text-zinc-500">
-            Prototype 0{index + 1}
-          </span>
-          <Play className="h-7 w-7 text-white transition-colors group-hover:text-[#b6ff00]" />
-        </div>
+        <span className="font-mono text-xs uppercase tracking-[0.26em] text-zinc-500">
+          Prototype 0{index + 1}
+        </span>
       </div>
 
       <div className="pt-8">
